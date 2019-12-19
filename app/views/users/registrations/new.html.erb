@@ -1,0 +1,48 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card rounded shadow shadow-sm">
+                        <div class="card-header fa">
+                            <h3 class="mb-0 my-2 text-primary">Sign Up</h3>
+                        </div>
+                        <div class="card-body">
+                            <form class="form" role="form" autocomplete="off">
+                                <div class="form-group">                                
+                                    <%= f.label :email, class: "fa" %>
+                                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Enter your E-mail" %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.label :password, class: "fa"  %>
+                                    <% if @minimum_password_length %>
+                                    <em class="fa">(<%= @minimum_password_length %> characters minimum)</em>
+                                    <% end %><br />
+                                    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Create new-password" %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.label :password_confirmation, class: "fa"  %>
+                                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirm password" %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.submit "Sign up", class: "btn btn-success btn-lg float-right" %>
+                                    <button type="button" class="btn btn-outline-primary btn-lg "><%= render "users/shared/links" %></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
+            <% end %>
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+
+</div>
+<!--/container-->

@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="table-responsive text-center">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+      <tr>
+        <th><b>#</b></th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>E-mail</th>
+        <th>Image</th>
+        <th>Created On</th>
+      </tr>
+      </thead>
+
+      
+        <tr>
+          <th scope="row">
+          <td><%= @post.title %></td>
+          <td><%= @post.desc %></td>
+          <td>
+            <% if @post.image.present? %>
+              <%= image_tag @post.image.url, class: "w-25" %>
+            <% else %>
+              <%= image_tag 'download', class: "w-25" %>
+            <% end %> 
+          </td>  
+          <td><%= @post.date %></td>
+         </th>
+        </tr>
+
+    </table>
+  </div>
+
+  <div class="text-center">
+    <%= link_to 'Back', posts_path, class: "btn btn-primary" %>
+  </div>
+
+</div>
